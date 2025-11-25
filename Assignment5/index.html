@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Assignment</title>
+</head>
+<body>
+  <h1>JavaScript Assignment</h1>
+
+  <!-- i. Arithmetic Operations -->
+  <h2>i. Arithmetic Operations</h2>
+  <input type="number" id="num1" placeholder="Enter first number">
+  <input type="number" id="num2" placeholder="Enter second number">
+  <button onclick="calculate()">Calculate</button>
+  <p id="result1"></p>
+
+  <!-- ii. Array Operations -->
+  <h2>ii. Array Operations</h2>
+  <button onclick="arrayOperations()">Run Array Operations</button>
+  <p id="result2"></p>
+
+  <!-- iii. Form Validation -->
+  <h2>iii. Form Validation</h2>
+  <form onsubmit="return validateForm()">
+    Name: <input type="text" id="name"><br><br>
+    Email: <input type="text" id="email"><br><br>
+    Age: <input type="number" id="age"><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="result3"></p>
+
+  <!-- iv. Student Object -->
+  <h2>iv. Student Object</h2>
+  <button onclick="studentOperations()">Run Student Object Operations</button>
+  <p id="result4"></p>
+
+  <!-- v. Array with map(), filter(), reduce() -->
+  <h2>v. Array with map(), filter(), reduce()</h2>
+  <button onclick="arrayMethods()">Run Array Method Operations</button>
+  <p id="result5"></p>
+
+  <script>
+    // i. Arithmetic Operations
+    function calculate() {
+      let a = parseFloat(document.getElementById("num1").value);
+      let b = parseFloat(document.getElementById("num2").value);
+      if (isNaN(a) || isNaN(b)) {
+        document.getElementById("result1").innerText = "Please enter valid numbers.";
+        return;
+      }
+      let sum = a + b;
+      let diff = a - b;
+      let prod = a * b;
+      let quot = b !== 0 ? (a / b) : "Infinity (division by zero)";
+      document.getElementById("result1").innerText =
+        `Sum = ${sum}, Difference = ${diff}, Product = ${prod}, Quotient = ${quot}`;
+    }
+
+    // ii. Array Operations
+    function arrayOperations() {
+      let arr = [12, 5, 78, 34, 9];
+      let largest = Math.max(...arr);
+      let smallest = Math.min(...arr);
+      let asc = [...arr].sort((a, b) => a - b);
+      let desc = [...arr].sort((a, b) => b - a);
+
+      document.getElementById("result2").innerText =
+        `Array: ${arr}
+         Largest: ${largest}, Smallest: ${smallest}
+         Ascending: ${asc}
+         Descending: ${desc}`;
+    }
+
+    // iii. Form Validation
+    function validateForm() {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let age = parseInt(document.getElementById("age").value);
+
+      let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      if (name === "") {
+        document.getElementById("result3").innerText = "Name cannot be empty.";
+        return false;
+      }
+      if (!email.match(emailPattern)) {
+        document.getElementById("result3").innerText = "Invalid email format.";
+        return false;
+      }
+      if (isNaN(age) || age < 18 || age > 100) {
+        document.getElementById("result3").innerText = "Age must be between 18 and 100.";
+        return false;
+      }
+      document.getElementById("result3").innerText = "Form submitted successfully!";
+      return false; // Prevent actual form submission for demo
+    }
+
+    // iv. Student Object
+    function studentOperations() {
+      let student = {
+        name: "Rahul",
+        age: 20,
+        grades: "A"
+      };
+      student.class = "B.Tech CSE";     // Add new property
+      student.grades = "A+";            // Update grade
+
+      let info = "";
+      for (let key in student) {
+        info += `${key}: ${student[key]} \n`;
+      }
+      document.getElementById("result4").innerText = info;
+    }
+
+    // v. Array with map(), filter(), reduce()
+    function arrayMethods() {
+      let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      let even = arr.filter(num => num % 2 === 0);
+      let doubled = even.map(num => num * 2);
+      let sum = doubled.reduce((acc, val) => acc + val, 0);
+
+      document.getElementById("result5").innerText =
+        `Original Array: ${arr}
+         After removing odds: ${even}
+         After multiplying by 2: ${doubled}
+         Sum of results: ${sum}`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Register — College Fest 2025</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>College Fest 2025</h1>
+      </div>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="register.html">Register</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Participant Registration Form</h2>
+      <form class="signup-form" action="#" method="post">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="name@example.com" required>
+
+        <label for="event">Select Event</label>
+        <select id="event" name="event" required>
+          <option value="">-- Choose an event --</option>
+          <option value="coding">Coding Hackathon</option>
+          <option value="debate">Debate Competition</option>
+          <option value="dance">Dance Battle</option>
+          <option value="photo">Photography Contest</option>
+          <option value="quiz">Quiz Mania</option>
+        </select>
+
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Any team members or special requirements"></textarea>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <small>© College Fest 2025</small>
+      <small>Contact: fest2025@college.edu</small>
+    </div>
+  </footer>
+</body>
+</html>

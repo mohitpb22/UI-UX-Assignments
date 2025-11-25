@@ -1,0 +1,55 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f9fb;
+  padding: 20px;
+  color: #111827;
+}
+h1 {
+  text-align: center;
+  color: #2563eb;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto 20px;
+}
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #1d4ed8;
+}
+.task {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+}
+.task.completed h3,
+.task.completed p {
+  text-decoration: line-through;
+  color: gray;
+}
+.task-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+.task-buttons button {
+  flex: 1;
+  font-size: 0.9rem;
+}

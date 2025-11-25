@@ -1,0 +1,251 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: linear-gradient(135deg, #0077b6, #00b4d8, #90e0ef);
+  padding: 25px;
+  padding-bottom: 80px;
+  height: 50px;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* floating icons effect */
+header::before, header::after {
+  content: "✈️";
+  position: absolute;
+  font-size: 40px;
+  opacity: 0.3;
+  animation: float 8s infinite linear;
+}
+header::before {
+  top: 10px; left: 10px;
+}
+header::after {
+  bottom: 10px; right: 20px;
+  content: "🌍";
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+nav {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+}
+nav a {
+  color: rgb(145, 196, 233);
+  margin: 0 18px;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #ffdd00;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+
+.container { padding: 20px; }
+
+.banner {
+  width: 100%;
+  height: 600px;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+th {
+  background: #008CBA;
+  color: white;
+}
+
+form {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+form input, form select, form textarea, form button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+form button {
+  background: #008CBA;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+form button:hover { background: #006f95; }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.gallery figure { text-align: center; }
+
+footer {
+  background: #008CBA;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  margin-top: 20px;
+}
+
+.extra-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  margin-top: 30px;
+}
+
+.info-box {
+  flex: 1 1 45%;
+  background: #fff;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.info-box:hover {
+  transform: translateY(-5px);
+}
+
+.info-box h2 {
+  color: #008CBA;
+  margin-bottom: 15px;
+}
+
+.info-box ul {
+  list-style: none;
+  padding: 0;
+}
+.info-box ul li {
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.offer-btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #008CBA;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.offer-btn:hover {
+  background: #006f95;
+}
+
+.welcome-section {
+  background: #ffffff;
+  padding: 40px;
+  margin: 30px auto;
+  max-width: 1000px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.welcome-section h2 {
+  color: #008CBA;
+  margin-bottom: 15px;
+  font-size: 28px;
+}
+
+.welcome-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.tips-container {
+  background: linear-gradient(135deg, #e0f7fa, #ffffff);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.tips-container h3 {
+  margin-bottom: 15px;
+  color: #006f95;
+}
+
+.tips-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.tips-container ul li {
+  font-size: 16px;
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+}
+
+.tips-container ul li span {
+  font-size: 20px;
+  margin-right: 10px;
+}

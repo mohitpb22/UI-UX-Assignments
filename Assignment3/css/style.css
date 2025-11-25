@@ -1,0 +1,219 @@
+/* 🌟 General Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* 🌟 Header and Navigation */
+  header {
+    background: #004aad;
+    color: #fff;
+    text-align: center;
+    padding: 30px 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    font-size: 2.4em;
+    margin-bottom: 5px;
+  }
+  
+  header p {
+    font-size: 1.1em;
+    opacity: 0.9;
+  }
+  
+  nav {
+    margin-top: 15px;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+  
+  nav a:hover {
+    background: #fff;
+    color: #004aad;
+  }
+  
+  /* 🌟 Headings and Sections */
+  h2, h3 {
+    color: #004aad;
+    margin: 25px 0 15px;
+    text-align: center;
+  }
+  
+  /* 🌟 Links */
+  a {
+    color: #004aad;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 🌟 Lists and Paragraphs */
+  ul {
+    list-style: none;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 600px;
+  }
+  
+  ul li {
+    background: #fff;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 🌟 Forms */
+  form {
+    width: 90%;
+    max-width: 500px;
+    background: #fff;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  form label {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  form input, form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 1em;
+    transition: 0.2s;
+  }
+  
+  form input:focus, form select:focus {
+    border-color: #004aad;
+  }
+  
+  form input[type="submit"] {
+    background: #004aad;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+  }
+  
+  form input[type="submit"]:hover {
+    background: #00327a;
+  }
+  
+  /* 🌟 Tables (Schedule Page) */
+  table {
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 700px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background: #004aad;
+    color: white;
+  }
+  
+  tr:hover {
+    background: #f1f1f1;
+  }
+  
+  /* 🌟 Gallery */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .gallery img {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* 🌟 Footer Links and Back Button */
+  p {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  p a {
+    color: #004aad;
+    font-weight: 600;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 🌟 Responsive Design */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.8em;
+    }
+  
+    nav a {
+      display: block;
+      margin: 6px auto;
+      width: 80%;
+    }
+  
+    form, table, ul {
+      width: 95%;
+    }
+  
+    .gallery img {
+      width: 45%;
+    }
+  }
+  

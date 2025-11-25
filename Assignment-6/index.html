@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Travel Packages — Assignment 2 (Enhanced)</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Main">
+      <a class="brand" href="index.html">Voyago</a>
+      <ul>
+        <li><a href="index.html" data-nav="home">Home</a></li>
+        <li><a href="#packages" data-nav="packages">Packages</a></li>
+        <li><a href="#estimator" data-nav="estimator">Booking Estimator</a></li>
+        <li><a href="#gallery" data-nav="gallery">Gallery</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1>Find Your Perfect Getaway</h1>
+      <p>Dynamic packages, live price estimator, and an attribute‑powered gallery modal — all done in vanilla JavaScript.</p>
+      <div class="layout-toggle">
+        <button id="toggleLayoutBtn" class="btn" aria-controls="thumbGrid">Toggle Gallery Layout</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- PACKAGES: rendered from JS data (loops + functions) -->
+    <section id="packages" class="card">
+      <h2>Packages</h2>
+      <p class="muted">Table is generated from an array of objects. Final Price uses operators and control flow (seasonal multipliers + weekend surcharge by start day).</p>
+      <div class="table-wrap">
+        <table id="packagesTable">
+          <caption>Available Packages (JS‑rendered)</caption>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Destination</th>
+              <th>Duration (days)</th>
+              <th>Base Price (₹)</th>
+              <th>Season</th>
+              <th>Starts On</th>
+              <th>Final Price (₹)</th>
+            </tr>
+          </thead>
+          <tbody><!-- JS injects rows here --></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- BOOKING ESTIMATOR: form + control flow -->
+    <section id="estimator" class="card">
+      <h2>Booking Price Estimator</h2>
+      <form id="estimateForm" class="grid-2" novalidate>
+        <label>Package
+          <select id="packageSelect" name="package" required></select>
+        </label>
+        <label>Guests
+          <input type="number" id="guests" name="guests" min="1" max="10" value="2" required>
+        </label>
+        <label>Check‑in
+          <input type="date" id="checkIn" name="checkIn" required>
+        </label>
+        <label>Check‑out
+          <input type="date" id="checkOut" name="checkOut" required>
+        </label>
+        <label>Promo code
+          <input type="text" id="promo" name="promo" placeholder="EARLYBIRD / FEST20">
+        </label>
+        <div class="output">
+          <div><strong>Nights:</strong> <span id="nights">0</span></div>
+          <div><strong>Total (₹):</strong> <span id="total">0</span></div>
+        </div>
+        <div class="span-2 actions">
+          <button type="submit" id="submitBtn" class="btn btn-primary">Book Now</button>
+        </div>
+        <p id="formMsg" class="muted span-2" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- GALLERY: attribute‑driven modal -->
+    <section id="gallery" class="card">
+      <h2>Gallery</h2>
+      <p class="muted">Thumbnails store large image paths in <code>data-large</code>. Clicking opens a CSS‑styled modal; JS reads attributes and sets <code>src</code>, <code>alt</code>, <code>title</code>.</p>
+      <div id="thumbGrid" class="gallery-grid" data-layout="fit">
+        <!-- Thumbnails (attributes read by JS) -->
+        <a href="#modal" class="thumb" data-large="assets/images/large/p1.svg" data-title="Goa Beaches" data-destination="Goa">
+          <img src="assets/images/thumbs/p1.svg" alt="Goa beach" loading="lazy">
+        </a>
+        <a href="#modal" class="thumb" data-large="assets/images/large/p2.svg" data-title="Manali Snow" data-destination="Manali">
+          <img src="assets/images/thumbs/p2.svg" alt="Manali mountains" loading="lazy">
+        </a>
+        <a href="#modal" class="thumb" data-large="assets/images/large/p3.svg" data-title="Jaipur Forts" data-destination="Jaipur">
+          <img src="assets/images/thumbs/p3.svg" alt="Jaipur fort" loading="lazy">
+        </a>
+        <a href="#modal" class="thumb" data-large="assets/images/large/p4.svg" data-title="Kerala Backwaters" data-destination="Alleppey">
+          <img src="assets/images/thumbs/p4.svg" alt="Kerala backwaters" loading="lazy">
+        </a>
+        <a href="#modal" class="thumb" data-large="assets/images/large/p5.svg" data-title="Andaman Reefs" data-destination="Port Blair">
+          <img src="assets/images/thumbs/p5.svg" alt="Andaman reefs" loading="lazy">
+        </a>
+        <a href="#modal" class="thumb" data-large="assets/images/large/p6.svg" data-title="Rann of Kutch" data-destination="Kutch">
+          <img src="assets/images/thumbs/p6.svg" alt="Rann of Kutch" loading="lazy">
+        </a>
+      </div>
+
+      <!-- Modal -->
+      <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-label="Image preview">
+        <div class="modal-content" role="document">
+          <button class="modal-close" id="modalClose" aria-label="Close preview">×</button>
+          <img id="modalImg" src="" alt="">
+          <h3 id="modalTitle"></h3>
+          <p class="muted">Destination: <span id="modalDest"></span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2025 Voyago Travels · Demo project for JS attributes, control flow, functions & DOM</p>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
